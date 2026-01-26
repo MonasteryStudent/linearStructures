@@ -1,0 +1,17 @@
+# Build directories
+build/
+cmake-build-*/
+
+# CMake generated files
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+CTestTestfile.cmake
+Makefile
+
+# VS Code
+.vscode/
+
+# Compiled binaries
+*.out
+*.exe
