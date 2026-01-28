@@ -3,12 +3,17 @@
 #include "List.h"
 
 int main() {
-    List<int> first_list;
-    for (int i = 9; i >= 0; i--) {
-        first_list.insertAtFront(i);
-    }
-    for (int i = 0; i < 10; i++) {
-        assert(first_list[i] == i);
+    List<std::string> characters;
+    std::string new_characters[3] = {
+        "Hofrat Dr.Behrens", 
+        "Dr. Krokowski", 
+        "Leo Naptha"
+    };
+    int index = 0;
+    for (std::string character : new_characters) {
+        characters.insertAtFront(character);
+        assert(characters[0] == new_characters[index]);
+        index++;
     }
     return 0;
 }

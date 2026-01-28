@@ -38,3 +38,12 @@ void Vector<T>::push_back(const T& value) {
     new (data + size) T(value);
     ++size;
 };
+
+
+template <typename T>
+void Vector<T>::pop_back() {
+    if (!size) {
+        throw std::out_of_range("Vector is empty");
+    }
+    data[--size].~T();
+}
