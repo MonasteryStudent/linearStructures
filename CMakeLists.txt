@@ -13,14 +13,20 @@ target_include_directories(linearStructures INTERFACE src)
 # Enable CTest
 enable_testing()
 
+# Test List push_front
 # Test executable
-add_executable(test_list_insert tests/test_list_insert.cpp)
+add_executable(test_list_push_front tests/test_list_push_front.cpp)
 # Link test against the library
-target_link_libraries(test_list_insert linearStructures)
+target_link_libraries(test_list_push_front linearStructures)
 # Tell CTest about the test you want to add
-add_test(NAME list_insert COMMAND test_list_insert)
+add_test(NAME list_push_front COMMAND test_list_push_front)
 
-# New Vector test
+# Test List pop_back
+add_executable(test_list_pop_back tests/test_list_pop_back.cpp)
+target_link_libraries(test_list_pop_back linearStructures)
+add_test(NAME list_pop_back COMMAND test_list_pop_back)
+
+# Test Vector push_back
 add_executable(test_vector_push_back tests/test_vector_push_back.cpp)
 target_link_libraries(test_vector_push_back linearStructures)
 add_test(NAME vector_push_back COMMAND test_vector_push_back)

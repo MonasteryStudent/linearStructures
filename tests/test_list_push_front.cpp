@@ -11,7 +11,7 @@ int main() {
     };
     int index = 0;
     for (std::string character : new_characters) {
-        characters.insertAtFront(character);
+        characters.push_front(character);
         assert(characters[0] == new_characters[index]);
         index++;
     }

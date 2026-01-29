@@ -18,7 +18,7 @@ const T& List<T>::operator[](unsigned index) const {
 }
 
 template <typename T>
-void List<T>::insertAtFront(const T& data) {
+void List<T>::push_front(const T& data) {
     Node* node = new Node(data);
     node->next = head;
     if (!head) { 
@@ -29,4 +29,20 @@ void List<T>::insertAtFront(const T& data) {
     
     head = node;
     size++;
+}
+
+template <typename T>
+void List<T>::pop_back() {
+    if (!size) {
+        throw std::out_of_range("List is empty");
+    }
+    Node* tmp = tail;
+    tail = tail->before;
+    if (size == 1) {
+        head = nullptr;
+    } else {
+        tail->next = nullptr;
+    }
+    delete tmp;
+    size--;
 }

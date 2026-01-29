@@ -20,4 +20,4 @@ ctest --test-dir build
 
 ## Notes
 - Uses CMake
-- Tests use cassert
+- Tests use cassert and CTest
