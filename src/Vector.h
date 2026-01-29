@@ -21,6 +21,7 @@ public:
     const T& operator[](std::size_t index) const;
     void push_back(const T& value);
     void pop_back();
+    std::size_t get_size() { return size; }
 
 private:
     T* data;

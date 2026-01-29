@@ -30,3 +30,8 @@ add_test(NAME list_pop_back COMMAND test_list_pop_back)
 add_executable(test_vector_push_back tests/test_vector_push_back.cpp)
 target_link_libraries(test_vector_push_back linearStructures)
 add_test(NAME vector_push_back COMMAND test_vector_push_back)
+
+# Test Vector pop_back
+add_executable(test_vector_pop_back tests/test_vector_push_back.cpp)
+target_link_libraries(test_vector_pop_back linearStructures)
+add_test(NAME vector_pop_back COMMAND test_vector_pop_back)
