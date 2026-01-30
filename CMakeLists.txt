@@ -31,6 +31,21 @@ add_executable(test_list_pop_back tests/test_list_pop_back.cpp)
 target_link_libraries(test_list_pop_back linearStructures)
 add_test(NAME list_pop_back COMMAND test_list_pop_back)
 
+# Test List pop_front
+add_executable(test_list_pop_front tests/test_list_pop_front.cpp)
+target_link_libraries(test_list_pop_front linearStructures)
+add_test(NAME list_pop_front COMMAND test_list_pop_front)
+
+# Test List front
+add_executable(test_list_front tests/test_list_front.cpp)
+target_link_libraries(test_list_front linearStructures)
+add_test(NAME list_front COMMAND test_list_front)
+
+# Test List back
+add_executable(test_list_back tests/test_list_back.cpp)
+target_link_libraries(test_list_back linearStructures)
+add_test(NAME list_back COMMAND test_list_back)
+
 # Test Vector push_back
 add_executable(test_vector_push_back tests/test_vector_push_back.cpp)
 target_link_libraries(test_vector_push_back linearStructures)
