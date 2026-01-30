@@ -15,7 +15,7 @@ int main() {
     
     }
     assert(size == primes.get_size());
-    while (!primes.is_empty()) {
+    while (!primes.empty()) {
         primes.pop_back();
     }
     assert(0 == primes.get_size());

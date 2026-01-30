@@ -40,3 +40,13 @@ add_test(NAME vector_push_back COMMAND test_vector_push_back)
 add_executable(test_vector_pop_back tests/test_vector_push_back.cpp)
 target_link_libraries(test_vector_pop_back linearStructures)
 add_test(NAME vector_pop_back COMMAND test_vector_pop_back)
+
+# Test Queue push
+add_executable(test_queue_push tests/test_queue_push.cpp)
+target_link_libraries(test_queue_push linearStructures)
+add_test(NAME queue_push COMMAND test_queue_push)
+
+# Test Queue pop
+add_executable(test_queue_pop tests/test_queue_pop.cpp)
+target_link_libraries(test_queue_pop linearStructures)
+add_test(NAME queue_pop COMMAND test_queue_pop)

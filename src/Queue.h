@@ -18,7 +18,13 @@ public:
     void pop() { list.pop_back(); };
 
     // Returns true if the queue is emtpy
-    bool empty() { list.emtpy() };
+    bool empty() { return list.emtpy(); };
+
+    // Return size of the queue.
+    std::size_t get_size() { return list.get_size(); };
+
+    // Return data from the front of the queue.
+    const T& front() { return list.back(); };
 
 private:
     List<T> list;

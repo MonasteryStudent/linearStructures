@@ -25,6 +25,7 @@ public:
     // the intended behaviour of the function with references.
     void push_front(const T& data);
     void pop_back();
+    const T& back();
     
     std::size_t size;
 

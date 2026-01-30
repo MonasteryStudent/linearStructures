@@ -46,3 +46,11 @@ void List<T>::pop_back() {
     delete tmp;
     size--;
 }
+
+template <typename T>
+const T& List<T>::back() {
+    if (!size) {
+        throw std::out_of_range("List is empty");
+    }
+    return tail->data;    
+}
