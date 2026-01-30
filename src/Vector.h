@@ -1,5 +1,6 @@
 #pragma once
-#include <cstddef>
+
+#include <cstddef> // to use std::size_t
 
 template <typename T>
 class Vector {

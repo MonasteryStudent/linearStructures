@@ -1,3 +1,8 @@
+# CMake is a build system generator, that does not compile code.
+# It generates build files (Makefiles, Ninja files, VS project files, etc.).
+# CMakeLists.txt is a declarative build description, not a script.
+# Here we describe what exists, and CMake figures out how to build it.
+
 cmake_minimum_required(VERSION 3.16)
 
 project(linearStructures LANGUAGES CXX)

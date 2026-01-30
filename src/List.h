@@ -1,5 +1,7 @@
 #pragma once
 
+#include <cstddef> // to use std::size_t
+
 template <typename T>
 class List {
 public:
@@ -15,7 +17,7 @@ public:
     // means that this function promises not to modify
     // the list. It's also called const-correctness.
     const T& operator[](unsigned index) const;
-    bool is_empty() { return size == 0; };
+    bool empty() { return size == 0; };
     std::size_t get_size() { return size; };
     // A reference is an alias - another name for an existing object.
     // The paramenter "const T& data" means, alias to the value, but read-only.
