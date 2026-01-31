@@ -1,6 +1,15 @@
 #include <stdexcept>
 
 template <typename T>
+List<T>::List(std::initializer_list<T> init) : List () // constructor delegation
+{
+    for (const T& elem : init) {
+        push_front(elem);
+    }
+}
+
+
+template <typename T>
 const T& List<T>::operator[](unsigned index) const {
     ensure_not_empty();
     if (index >= size) {

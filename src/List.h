@@ -1,11 +1,13 @@
 #pragma once
 
 #include <cstddef> // to use std::size_t
+#include <initializer_list>
 
 template <typename T>
 class List {
 public:
     List() : head(nullptr), tail(nullptr), size(0) {}
+    List(std::initializer_list<T> init);
     ~List() {
         while (head) {
             Node* tmp = head;
