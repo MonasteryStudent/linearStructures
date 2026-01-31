@@ -24,7 +24,7 @@ int main() {
     // It captures the object and calls the member function.
     // To make it clear: The lambda [&] { primes.pop_back(); } is an rvalue temporary,
     // so the Func&& func binds to it as a forwarding reference.
-    // Inside asser_throw, calling func() executes the lambda.
+    // Inside assert_throw, calling func() executes the lambda.
     assert_throw<std::out_of_range>([&] { primes.pop_back(); });
 
     return 0;

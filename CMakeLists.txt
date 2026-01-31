@@ -65,3 +65,13 @@ add_test(NAME queue_push COMMAND test_queue_push)
 add_executable(test_queue_pop tests/test_queue_pop.cpp)
 target_link_libraries(test_queue_pop linearStructures)
 add_test(NAME queue_pop COMMAND test_queue_pop)
+
+# Test Stack push
+add_executable(test_stack_push tests/test_stack_push.cpp)
+target_link_libraries(test_stack_push linearStructures)
+add_test(NAME stack_push COMMAND test_stack_push)
+
+# Test Stack pop
+add_executable(test_stack_pop tests/test_stack_pop.cpp)
+target_link_libraries(test_stack_pop linearStructures)
+add_test(NAME stack_pop COMMAND test_stack_pop)
