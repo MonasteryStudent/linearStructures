@@ -20,6 +20,7 @@ public:
     // modifying it would not affect the caller and
     // we have no reason to alter the index.
     const T& operator[](std::size_t index) const;
+    T& operator[](std::size_t index); // returns modifiable reference
     void push_back(const T& value);
     void pop_back();
     std::size_t get_size() { return size; }

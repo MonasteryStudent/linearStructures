@@ -10,6 +10,15 @@ const T& Vector<T>::operator[](std::size_t index) const {
     return data[index];
 };
 
+template <typename T>
+T& Vector<T>::operator[](std::size_t index) {
+    if (!size) {
+        throw std::out_of_range("Vector is empty");
+    } else if (index >= size) {
+        throw std::out_of_range("Index is out of range");
+    }
+    return data[index];   
+}
 
 template <typename T>
 void Vector<T>::push_back(const T& value) {
