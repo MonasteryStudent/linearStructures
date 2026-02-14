@@ -56,3 +56,11 @@ void Vector<T>::pop_back() {
     }
     data[--size].~T();
 }
+
+template <typename T>
+const T& Vector<T>::front() {
+    if (!size) {
+        throw std::out_of_range("Vector is empty");
+    }
+    return data[0];
+}
