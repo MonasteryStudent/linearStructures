@@ -58,6 +58,11 @@ if(LINEAR_STRUCTURES_BUILD_TESTS)
     target_link_libraries(test_vector_pop_back linearStructures)
     target_include_directories(test_vector_pop_back PRIVATE tests)
     add_test(NAME vector_pop_back COMMAND test_vector_pop_back)
+    # front
+    add_executable(test_vector_front tests/vector/test_vector_front.cpp)
+    target_link_libraries(test_vector_front linearStructures)
+    target_include_directories(test_vector_front PRIVATE tests)
+    add_test(NAME test_vector_front COMMAND test_vector_front)
 
     # Tests Queue 
     # push
