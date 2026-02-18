@@ -63,6 +63,16 @@ if(LINEAR_STRUCTURES_BUILD_TESTS)
     target_link_libraries(test_vector_front linearStructures)
     target_include_directories(test_vector_front PRIVATE tests)
     add_test(NAME test_vector_front COMMAND test_vector_front)
+    # copy assignment
+    add_executable(test_vector_copy_assignment tests/vector/test_vector_copy_assignment.cpp)
+    target_link_libraries(test_vector_copy_assignment linearStructures)
+    target_include_directories(test_vector_copy_assignment PRIVATE tests)
+    add_test(NAME vector_copy_assignment COMMAND test_vector_copy_assignment)
+    # copy constructor
+    add_executable(test_vector_copy_constructor tests/vector/test_vector_copy_constructor.cpp)
+    target_link_libraries(test_vector_copy_constructor linearStructures)
+    target_include_directories(test_vector_copy_constructor PRIVATE tests)
+    add_test(NAME vector_copy_constructor COMMAND test_vector_copy_constructor)
 
     # Tests Queue 
     # push
