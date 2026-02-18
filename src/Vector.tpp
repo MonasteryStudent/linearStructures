@@ -1,6 +1,63 @@
 #include <stdexcept>
 
 template <typename T>
+Vector<T>::Vector(const Vector<T>& other) 
+    : data(nullptr), size(other.get_size()), capacity(other.get_capacity())
+{
+    if (capacity == 0) {
+        return; // nothing to allocate
+    }
+
+    /* 
+    For educational reasons:
+    The simpler version of memory allocation would be to use the
+    following syntax: 
+        data = new T[capacity];
+    This is simple and safe, but it goes with the disadvantage to
+    construct capacity objects, even if size is smaller, e.g.
+    capacity = 100 and size = 3. This would be inefficient for heavy
+    objects.
+    In contrast with the operator new + placement new syntax we just
+    allocate raw memory for our capacity and manually construct only
+    the objects that we need (i.e. size objects). Later on we
+    also must manually destroy them, what happens with the code 
+    in the destructor.
+    */
+    
+    data = static_cast<T*>(::operator new(sizeof(T) * capacity));
+    for (std::size_t i = 0; i < size; i++) {
+        new (data + i) T(other[i]);
+    }
+}
+
+template <typename T>
+Vector<T>& Vector<T>::operator=(const Vector<T>& other) {
+    if (this == &other) return *this;
+
+    // destroy current contents
+    for (std::size_t i = 0; i < size; i++) {
+        data[i].~T();
+    }
+    ::operator delete(data);
+
+    // copy sizes
+    size = other.get_size();
+    capacity = other.get_capacity();
+
+    // allocate new raw memory
+    data = static_cast<T*>(::operator new(sizeof(T) * capacity));
+
+    // copy-construct elements into our raw memory
+    for (std::size_t i = 0; i < size; i++) {
+        new (data + i) T(other[i]);
+    }
+
+    return *this;
+
+}
+
+
+template <typename T>
 const T& Vector<T>::operator[](std::size_t index) const {
     if (!size) {
         throw std::out_of_range("Vector is empty");
