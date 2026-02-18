@@ -18,6 +18,26 @@ cmake --build build --clean-first
 ctest --test-dir build
 ```
 
-## Notes
-- Uses CMake
-- Tests use cassert and CTest
+## Build & Test with Makefile
+
+You can also use the included `Makefile` to simplify common tasks:
+
+- Configure & build:
+```
+make build
+```
+
+- Run tests:
+```
+make test
+```
+
+- Clean the build folder:
+```
+make clean
+```
+
+- Only configures CMake without building:
+```
+make configure
+```
